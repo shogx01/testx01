@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link   rel="shortcut icon" type="x-ion" href="assets/images/logo mersh3.2.png" >
+  <title>Product Page</title>
+  
+  <link rel="stylesheet" href="sty.css">
+  
+</head>
+<body>
+ 
+    
+                  
+            
+           
+             
+              
+              
+               
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  <div class="background"></div>
+  <a class="nav-link" href="karoosa.html">
+    <img src="assets/images/shop_logo.png" alt="Your Logo" class="logo-image"style="max-width: 50px; height: auto;">
+</a>
+  <div class="container">
+    
+    <div class="product-details">
+      <div class="product-image">
+        <img src="assets/images/logo mersh3.0.png" alt="Product Image" class="main-image">
+        
+    </div>
+      <div class="thumbnail-images">
+        <img src="assets/images/logo mersh3.2.png" alt="Thumbnail 1" class="thumbnail" style="width: 130px;">
+        <img src="assets/images/logo mersh3.0.png" alt="Thumbnail 2" class="thumbnail" style="width: 130px;">
+        <img src="assets/images/logo mersh3.4.png" alt="Thumbnail 3" class="thumbnail" style="width: 130px;">
+    </div>
+
+      <div class="details">
+        <h2>Product Name</h2>
+        <p>Description of the product goes here.</p>
+        <div class="product-options">
+          <div class="sizes">
+            <label for="sizes">Sizes:</label>
+            <select id="sizes">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+          <div class="colors">
+            <label for="colors">Colors:</label>
+            <select id="colors">
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+            </select>
+          </div>
+          <div class="price">
+            <p id="price-product1">Price: $25.75</p>
+          </div>
+          <div class="quantity">
+            <label for="quantity-product1">Quantity:</label>
+            <input type="number" id="quantity-product1" min="1" value="1">
+          </div>
+          <div class="add-to-cart">
+            
+            <button onclick="addToCart('Product 1', 25.75)">Add to Cart</button>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</body>
+<script src="script.js"></script>
+<script>
+    // JavaScript for thumbnail image swapping
+const mainImage = document.querySelector('.main-image');
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('mouseover', () => {
+    mainImage.src = thumbnail.src;
+  });
+});
+
+</script>
+</html>

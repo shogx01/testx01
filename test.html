@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link   rel="shortcut icon" type="x-ion" href="assets/images/logo mersh3.2.png" >
+  <title>Simple Shop</title>
+  <style>
+    /* Basic styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+
+    .pagination {
+      margin-top: 20px;
+    }
+
+    .page.active {
+      font-weight: bold;
+    }
+
+    .product-page {
+      display: none;
+    }
+
+    .product-page.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Shop</h1>
+    <div class="pagination">
+      <button class="prev">&lt;</button>
+      <button class="page active">1</button>
+      <button class="page">2</button>
+      <button class="page">3</button>
+      <button class="page">4</button>
+      <button class="page">5</button>
+      <button class="next">&gt;</button>
+    </div>
+  </header>
+
+  
+    <!-- Product cards for page 1 -->
+    <div class="product-page page-1 active">
+      <div class="col-lg-4 col-md-4 all des">
+                      <div class="product-item">
+                        <a href="#"><img src="assets/images/logo mersh3.0.png" alt=""></a>
+                        <div class="down-content">
+                          <a href="#"><h4>Tittle goes here</h4></a>
+                          <h6>$12.50</h6>
+                          <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews (72)</span>
+                        </div>
+                      </div>
+                    </div>
+      <div class="product">
+        <h2>Item 2</h2>
+        <p>Description of Item 2</p>
+      </div>
+      <div class="product">
+        <h2>Item 3</h2>
+        <p>Description of Item 3</p>
+      </div>
+    </div>
+
+    <!-- Product cards for page 2 (Hidden initially) -->
+    <div class="product-page page-2">
+      <div class="product">
+        <h2>Item 4</h2>
+        <p>Description of Item 4</p>
+      </div>
+      <div class="product">
+        <h2>Item 5</h2>
+        <p>Description of Item 5</p>
+      </div>
+      <div class="product">
+        <h2>Item 6</h2>
+        <p>Description of Item 6</p>
+      </div>
+    </div>
+
+    <!-- Add more product pages similarly -->
+
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const pages = document.querySelectorAll(".page");
+      const productPages = document.querySelectorAll(".product-page");
+
+      pages.forEach((page, index) => {
+        page.addEventListener("click", function() {
+          productPages.forEach(productPage => {
+            productPage.classList.remove("active");
+          });
+
+          productPages[index].classList.add("active");
+
+          pages.forEach(page => {
+            page.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let currentPage = 0;
+
+      nextBtn.addEventListener("click", function() {
+        if (currentPage < productPages.length - 1) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      });
+
+      prevBtn.addEventListener("click", function() {
+        if (currentPage > 0) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      });
+
+      function showPage(pageIndex) {
+        productPages.forEach(productPage => {
+          productPage.classList.remove("active");
+        });
+
+        productPages[pageIndex].classList.add("active");
+
+        pages.forEach(page => {
+          page.classList.remove("active");
+        });
+
+        pages[pageIndex].classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>

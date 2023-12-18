@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link   rel="shortcut icon" type="x-ion" href="assets/images/logo mersh3.2.png" >
+  <title>Cart Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Your Cart</h1>
+    <ul id="cart-items" class="cart-items"></ul>
+    <p id="total-quantity">Total Quantity: 0</p>
+    <p id="total-price">Total Price: $0</p>
+    <button onclick="cancelCart()">Cancel</button>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    displayCartItems();
+  </script>
+</body>
+</html>
+
