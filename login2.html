@@ -150,7 +150,7 @@
 
     const database = getDatabase(app);
     const auth = getAuth(app);
-    logni.addEventListener('click',(e)=>{
+    login.addEventListener('click',(e)=>{
       signInWithPopup(auth, provider);
       getRedirectResult(auth)
   .then((result) => {
